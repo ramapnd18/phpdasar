@@ -116,21 +116,22 @@ function cari($keyword){
             WHERE nama LIKE '%$keyword%' OR 
             npm LIKE '%$keyword%' OR 
             email LIKE '%$keyword%' OR
-            jurusan LIKE '%$keyword%'";
+            jurusan LIKE '%$keyword%' ";
     return query($query);
 }
 
+
 //fungsi paginate
-function pagination($jumlahData, $dataPerhalaman, $halamanAktif){
-    $jumlahHalaman = ceil($jumlahData / $dataPerhalaman);
-    $halamanAwal = ($dataPerhalaman * $halamanAktif) - $dataPerhalaman;
-    $halamanAkhir = $halamanAwal + $dataPerhalaman;
-    $halamanAwal = ($halamanAwal < 0) ? 0 : $halamanAwal;
-    $halamanAkhir = ($halamanAkhir >= $jumlahHalaman) ? $jumlahHalaman : $halamanAkhir;
-    $halamanAwal = ($halamanAwal == 0) ? 1 : $halamanAwal;
-    $halamanAkhir = ($halamanAkhir == $jumlahHalaman) ? $jumlahHalaman : $halamanAkhir;
-    return [$halamanAwal, $halamanAkhir];
-}
+// function pagination($jumlahData, $dataPerhalaman, $halamanAktif){
+//     $jumlahHalaman = ceil($jumlahData / $dataPerhalaman);
+//     $halamanAwal = ($dataPerhalaman * $halamanAktif) - $dataPerhalaman;
+//     $halamanAkhir = $halamanAwal + $dataPerhalaman;
+//     $halamanAwal = ($halamanAwal < 0) ? 0 : $halamanAwal;
+//     $halamanAkhir = ($halamanAkhir >= $jumlahHalaman) ? $jumlahHalaman : $halamanAkhir;
+//     $halamanAwal = ($halamanAwal == 0) ? 1 : $halamanAwal;
+//     $halamanAkhir = ($halamanAkhir == $jumlahHalaman) ? $jumlahHalaman : $halamanAkhir;
+//     return [$halamanAwal, $halamanAkhir];
+// }
 
 //fungsi registrasi
 function registrasi($data){
